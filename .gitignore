@@ -1,0 +1,7 @@
+llvm-project
+
+*.log
+.ipcache
+
+_x.hw.xilinx*
+build_dir.*

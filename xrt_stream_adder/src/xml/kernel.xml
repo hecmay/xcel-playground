@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root versionMajor="1" versionMinor="6">
+  <kernel name="blocked_accum_s2m0" language="ip_c" vlnv="mycompany.com:kernel:blocked_accum_s2m0:1.0" attributes="" preferredWorkGroupSizeMultiple="0" workGroupSize="1" interrupt="false" hwControlProtocol="ap_ctrl_none">
+    <ports>
+      <port name="s_axi_control" mode="slave" range="0x1000" dataWidth="32" portType="addressable" base="0x0"/>
+      <port name="in0" mode="read_only" dataWidth="32" portType="stream"/>
+      <port name="out0" mode="write_only" dataWidth="32" portType="stream"/>
+    </ports>
+    <args>
+      <arg name="in0" addressQualifier="4" id="0" port="in0" size="0x4" offset="0x010" hostOffset="0x0" hostSize="0x4" type="stream&lt;qdma_axis&lt;32,0,0,0>>&amp;" />
+      <arg name="out0" addressQualifier="4" id="1" port="out0" size="0x4" offset="0x018" hostOffset="0x0" hostSize="0x4" type="stream&lt;qdma_axis&lt;32,0,0,0>>&amp;" />
+    </args>
+  </kernel>
+</root>
+

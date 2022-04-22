@@ -18,11 +18,9 @@ size_t max_buffer = 16 * 1024 * 1024;
 size_t min_buffer = 4 * 1024;
 size_t max_size = 128 * 1024 * 1024; // 128MB
 
-int p2p_host_to_ssd(int& nvmeFd,
-                    cl::Context context,
-                    cl::CommandQueue q,
-                    cl::Program program,
-                    std::vector<int, aligned_allocator<int> > source_input_A) {
+
+int p2p_ssd_to_gpu(
+) {
     int gpu_n;
     checkCudaErrors(cudaGetDeviceCount(&gpu_n));
 
@@ -66,7 +64,15 @@ int p2p_host_to_ssd(int& nvmeFd,
 
     // Use first pair of p2p capable GPUs detected.
     gpuid[0] = p2pCapableGPUs[0];
+  
+}
 
+
+int p2p_fpga_to_ssd(int& nvmeFd,
+                    cl::Context context,
+                    cl::CommandQueue q,
+                    cl::Program program,
+                    std::vector<int, aligned_allocator<int> > source_input_A) {
 
     int err;
     int ret = 0;
@@ -142,8 +148,7 @@ int p2p_host_to_ssd(int& nvmeFd,
 }
 
 
-
-void p2p_ssd_to_host(int& nvmeFd,
+void p2p_ssd_to_fpga(int& nvmeFd,
                      cl::Context context,
                      cl::CommandQueue q,
                      cl::Program program,
@@ -167,9 +172,6 @@ void p2p_ssd_to_host(int& nvmeFd,
                                        nullptr, nullptr,
                                        &err); // error code
     q.finish();
-
-    
-
 
 
     std::cout << "Start P2P Read of various buffer sizes from device buffers to SSD\n" << std::endl;
@@ -301,11 +303,11 @@ int main(int argc, char** argv) {
     }
     std::cout << "INFO: Successfully opened NVME SSD " << filename << std::endl;
     int ret = 0;
-    ret = p2p_host_to_ssd(nvmeFd, context, q, program, source_input_A);
+    ret = p2p_fpga_to_ssd(nvmeFd, context, q, program, source_input_A);
     (void)close(nvmeFd);
     if (ret != 0) return EXIT_FAILURE;
 
-    // P2P transfer from SSD to host
+    // P2P transfer from SSD to FPGA
     /*
     std::cout << "############################################################\n";
     std::cout << "                  Writing data to SSD                       \n";
@@ -318,7 +320,7 @@ int main(int argc, char** argv) {
     }
     std::cout << "INFO: Successfully opened NVME SSD " << filename << std::endl;
 
-    p2p_ssd_to_host(nvmeFd, context, q, program, &source_input_A);
+    p2p_ssd_to_fpga(nvmeFd, context, q, program, &source_input_A);
 
     (void)close(nvmeFd);
     */
