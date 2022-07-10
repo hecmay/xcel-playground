@@ -1,0 +1,54 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mmm.cpp:27:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mmm_basic" ARG_PragmaIsValid="1" ARG_PragmaOptions="OFF" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mmm.cpp:35:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mmm_basic" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=UNROLL" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mmm.cpp:44:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mmm_accum" ARG_PragmaIsValid="1" ARG_PragmaOptions="OFF" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mmm.cpp:54:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mmm_accum" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=UNROLL" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mmm.cpp:64:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mmm_accum2" ARG_PragmaIsValid="1" ARG_PragmaOptions="OFF" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mmm.cpp:74:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mmm_accum2" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=UNROLL" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mmm.cpp:84:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mmm_voodoo" ARG_PragmaIsValid="1" ARG_PragmaOptions="OFF" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mmm.cpp:94:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mmm_voodoo" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=UNROLL" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mmm.cpp:105:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="top" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=top" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mmm.cpp:105:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="top" ARG_PragmaIsValid="1" ARG_PragmaOptions="dim=1 type=cyclic factor=UNROLL variable=B" ARG_PragmaType="array_reshape" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mmm.cpp:106:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="top" ARG_PragmaIsValid="1" ARG_PragmaOptions="dim=2 type=cyclic factor=UNROLL variable=A" ARG_PragmaType="array_reshape" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-188" msg_severity="INFO" msg_loc="mmm.cpp:83:0" msg_body="Unrolling loop 'ak' (mmm.cpp:93:17) in function 'mmm_voodoo' partially with a factor of 2">
+        <args Factor="2" LoopLoc="mmm.cpp:93:17" LoopName="ak"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-188" msg_severity="INFO" msg_loc="mmm.cpp:43:0" msg_body="Unrolling loop 'ak' (mmm.cpp:53:17) in function 'mmm_accum' partially with a factor of 2">
+        <args Factor="2" LoopLoc="mmm.cpp:53:17" LoopName="ak"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-188" msg_severity="INFO" msg_loc="mmm.cpp:63:0" msg_body="Unrolling loop 'ak' (mmm.cpp:73:17) in function 'mmm_accum2' partially with a factor of 2">
+        <args Factor="2" LoopLoc="mmm.cpp:73:17" LoopName="ak"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-188" msg_severity="INFO" msg_loc="mmm.cpp:26:0" msg_body="Unrolling loop 'ak' (mmm.cpp:34:17) in function 'mmm_basic' partially with a factor of 2">
+        <args Factor="2" LoopLoc="mmm.cpp:34:17" LoopName="ak"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="mmm.cpp:104:0" msg_body="Applying array_reshape to 'A': Cyclic reshaping with factor 2 on dimension 2.">
+        <args Dim="2" Factor="2" Mode="Cyclic" UOName="A"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="mmm.cpp:104:0" msg_body="Applying array_reshape to 'B': Cyclic reshaping with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Cyclic" UOName="B"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

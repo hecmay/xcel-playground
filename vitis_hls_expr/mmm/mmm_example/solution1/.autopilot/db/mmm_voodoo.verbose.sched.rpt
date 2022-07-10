@@ -1,0 +1,364 @@
+
+
+================================================================
+== Vitis HLS Report for 'mmm_voodoo'
+================================================================
+* Date:           Sun Jul 10 13:00:25 2022
+
+* Version:        2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)
+* Project:        mmm_example
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xczu7ev-ffvc1156-2-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  5.00 ns|  3.454 ns|     1.35 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +----------+----------+-----------+-----------+----------+----------+---------+
+    |   Latency (cycles)  |   Latency (absolute)  |       Interval      | Pipeline|
+    |    min   |    max   |    min    |    max    |    min   |    max   |   Type  |
+    +----------+----------+-----------+-----------+----------+----------+---------+
+    |  12124161|  12124161|  60.621 ms|  60.621 ms|  12124161|  12124161|       no|
+    +----------+----------+-----------+-----------+----------+----------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+----------+----------+----------+-----------+-----------+-------+----------+
+        |          |   Latency (cycles)  | Iteration|  Initiation Interval  |  Trip |          |
+        | Loop Name|    min   |    max   |  Latency |  achieved |   target  | Count | Pipelined|
+        +----------+----------+----------+----------+-----------+-----------+-------+----------+
+        |- ai_aj   |  12124160|  12124160|       185|          -|          -|  65536|        no|
+        +----------+----------+----------+----------+-----------+-----------+-------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 24
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 2 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.42>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%j = alloca i32 1"   --->   Operation 25 'alloca' 'j' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%i = alloca i32 1"   --->   Operation 26 'alloca' 'i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%indvar_flatten = alloca i32 1"   --->   Operation 27 'alloca' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %B, void @empty, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 28 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %A, void @empty, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 29 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %C, void @empty, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 30 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%accum = alloca i64 1" [mmm.cpp:90]   --->   Operation 31 'alloca' 'accum' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%accum_addr = getelementptr i32 %accum, i64 0, i64 0"   --->   Operation 32 'getelementptr' 'accum_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%accum_addr_1 = getelementptr i32 %accum, i64 0, i64 1"   --->   Operation 33 'getelementptr' 'accum_addr_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.42ns)   --->   "%store_ln88 = store i17 0, i17 %indvar_flatten" [mmm.cpp:88]   --->   Operation 34 'store' 'store_ln88' <Predicate = true> <Delay = 0.42>
+ST_1 : Operation 35 [1/1] (0.42ns)   --->   "%store_ln88 = store i9 0, i9 %i" [mmm.cpp:88]   --->   Operation 35 'store' 'store_ln88' <Predicate = true> <Delay = 0.42>
+ST_1 : Operation 36 [1/1] (0.42ns)   --->   "%store_ln88 = store i9 0, i9 %j" [mmm.cpp:88]   --->   Operation 36 'store' 'store_ln88' <Predicate = true> <Delay = 0.42>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%br_ln88 = br void" [mmm.cpp:88]   --->   Operation 37 'br' 'br_ln88' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 1.52>
+ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%indvar_flatten_load = load i17 %indvar_flatten" [mmm.cpp:88]   --->   Operation 38 'load' 'indvar_flatten_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 39 [1/1] (1.09ns)   --->   "%icmp_ln88 = icmp_eq  i17 %indvar_flatten_load, i17 65536" [mmm.cpp:88]   --->   Operation 39 'icmp' 'icmp_ln88' <Predicate = true> <Delay = 1.09> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 40 [1/1] (0.86ns)   --->   "%add_ln88_1 = add i17 %indvar_flatten_load, i17 1" [mmm.cpp:88]   --->   Operation 40 'add' 'add_ln88_1' <Predicate = true> <Delay = 0.86> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 41 [1/1] (0.00ns)   --->   "%br_ln88 = br i1 %icmp_ln88, void %.split14, void" [mmm.cpp:88]   --->   Operation 41 'br' 'br_ln88' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 42 [2/2] (0.00ns)   --->   "%call_ln0 = call void @mmm_voodoo_Pipeline_1, i32 %accum"   --->   Operation 42 'call' 'call_ln0' <Predicate = (!icmp_ln88)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 43 [1/1] (0.42ns)   --->   "%store_ln88 = store i17 %add_ln88_1, i17 %indvar_flatten" [mmm.cpp:88]   --->   Operation 43 'store' 'store_ln88' <Predicate = (!icmp_ln88)> <Delay = 0.42>
+ST_2 : Operation 44 [1/1] (0.00ns)   --->   "%ret_ln100 = ret" [mmm.cpp:100]   --->   Operation 44 'ret' 'ret_ln100' <Predicate = (icmp_ln88)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 45 [1/2] (0.00ns)   --->   "%call_ln0 = call void @mmm_voodoo_Pipeline_1, i32 %accum"   --->   Operation 45 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 3.35>
+ST_4 : Operation 46 [1/1] (0.00ns)   --->   "%j_load = load i9 %j" [mmm.cpp:89]   --->   Operation 46 'load' 'j_load' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 47 [1/1] (0.00ns)   --->   "%i_load = load i9 %i" [mmm.cpp:88]   --->   Operation 47 'load' 'i_load' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 48 [1/1] (0.77ns)   --->   "%add_ln88 = add i9 %i_load, i9 1" [mmm.cpp:88]   --->   Operation 48 'add' 'add_ln88' <Predicate = true> <Delay = 0.77> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 49 [1/1] (0.88ns)   --->   "%icmp_ln89 = icmp_eq  i9 %j_load, i9 256" [mmm.cpp:89]   --->   Operation 49 'icmp' 'icmp_ln89' <Predicate = true> <Delay = 0.88> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 50 [1/1] (0.39ns)   --->   "%select_ln88 = select i1 %icmp_ln89, i9 0, i9 %j_load" [mmm.cpp:88]   --->   Operation 50 'select' 'select_ln88' <Predicate = true> <Delay = 0.39> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.39> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 51 [1/1] (0.39ns)   --->   "%select_ln88_1 = select i1 %icmp_ln89, i9 %add_ln88, i9 %i_load" [mmm.cpp:88]   --->   Operation 51 'select' 'select_ln88_1' <Predicate = true> <Delay = 0.39> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.39> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 52 [1/1] (0.00ns)   --->   "%trunc_ln92 = trunc i9 %select_ln88_1" [mmm.cpp:92]   --->   Operation 52 'trunc' 'trunc_ln92' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 53 [1/1] (0.00ns)   --->   "%tmp_4_cast = bitconcatenate i16 @_ssdm_op_BitConcatenate.i16.i8.i8, i8 %trunc_ln92, i8 0" [mmm.cpp:95]   --->   Operation 53 'bitconcatenate' 'tmp_4_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 54 [1/1] (0.00ns)   --->   "%trunc_ln95 = trunc i9 %select_ln88_1" [mmm.cpp:95]   --->   Operation 54 'trunc' 'trunc_ln95' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 55 [1/1] (0.00ns)   --->   "%zext_ln92 = zext i9 %select_ln88" [mmm.cpp:92]   --->   Operation 55 'zext' 'zext_ln92' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 56 [1/1] (0.85ns)   --->   "%add_ln92 = add i16 %tmp_4_cast, i16 %zext_ln92" [mmm.cpp:92]   --->   Operation 56 'add' 'add_ln92' <Predicate = true> <Delay = 0.85> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 57 [2/2] (2.07ns)   --->   "%call_ln88 = call void @mmm_voodoo_Pipeline_ak, i9 %select_ln88_1, i1 %trunc_ln95, i64 %A, i9 %select_ln88, i64 %B, i32 %accum" [mmm.cpp:88]   --->   Operation 57 'call' 'call_ln88' <Predicate = true> <Delay = 2.07> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_4 : Operation 58 [1/1] (0.77ns)   --->   "%add_ln89 = add i9 %select_ln88, i9 1" [mmm.cpp:89]   --->   Operation 58 'add' 'add_ln89' <Predicate = true> <Delay = 0.77> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 59 [1/1] (0.42ns)   --->   "%store_ln88 = store i9 %select_ln88_1, i9 %i" [mmm.cpp:88]   --->   Operation 59 'store' 'store_ln88' <Predicate = true> <Delay = 0.42>
+ST_4 : Operation 60 [1/1] (0.42ns)   --->   "%store_ln89 = store i9 %add_ln89, i9 %j" [mmm.cpp:89]   --->   Operation 60 'store' 'store_ln89' <Predicate = true> <Delay = 0.42>
+
+State 5 <SV = 4> <Delay = 0.00>
+ST_5 : Operation 61 [1/2] (0.00ns)   --->   "%call_ln88 = call void @mmm_voodoo_Pipeline_ak, i9 %select_ln88_1, i1 %trunc_ln95, i64 %A, i9 %select_ln88, i64 %B, i32 %accum" [mmm.cpp:88]   --->   Operation 61 'call' 'call_ln88' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 0.67>
+ST_6 : Operation 62 [2/2] (0.67ns)   --->   "%accum_load = load i3 %accum_addr" [mmm.cpp:97]   --->   Operation 62 'load' 'accum_load' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_6 : Operation 63 [2/2] (0.67ns)   --->   "%accum_load_1 = load i3 %accum_addr_1" [mmm.cpp:97]   --->   Operation 63 'load' 'accum_load_1' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+
+State 7 <SV = 6> <Delay = 0.67>
+ST_7 : Operation 64 [1/2] (0.67ns)   --->   "%accum_load = load i3 %accum_addr" [mmm.cpp:97]   --->   Operation 64 'load' 'accum_load' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_7 : Operation 65 [1/2] (0.67ns)   --->   "%accum_load_1 = load i3 %accum_addr_1" [mmm.cpp:97]   --->   Operation 65 'load' 'accum_load_1' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+
+State 8 <SV = 7> <Delay = 3.45>
+ST_8 : Operation 66 [8/8] (3.45ns)   --->   "%add1 = fadd i32 %accum_load, i32 %accum_load_1" [mmm.cpp:97]   --->   Operation 66 'fadd' 'add1' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 9 <SV = 8> <Delay = 3.45>
+ST_9 : Operation 67 [7/8] (3.45ns)   --->   "%add1 = fadd i32 %accum_load, i32 %accum_load_1" [mmm.cpp:97]   --->   Operation 67 'fadd' 'add1' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 10 <SV = 9> <Delay = 3.45>
+ST_10 : Operation 68 [6/8] (3.45ns)   --->   "%add1 = fadd i32 %accum_load, i32 %accum_load_1" [mmm.cpp:97]   --->   Operation 68 'fadd' 'add1' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 11 <SV = 10> <Delay = 3.45>
+ST_11 : Operation 69 [5/8] (3.45ns)   --->   "%add1 = fadd i32 %accum_load, i32 %accum_load_1" [mmm.cpp:97]   --->   Operation 69 'fadd' 'add1' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 12 <SV = 11> <Delay = 3.45>
+ST_12 : Operation 70 [4/8] (3.45ns)   --->   "%add1 = fadd i32 %accum_load, i32 %accum_load_1" [mmm.cpp:97]   --->   Operation 70 'fadd' 'add1' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 13 <SV = 12> <Delay = 3.45>
+ST_13 : Operation 71 [3/8] (3.45ns)   --->   "%add1 = fadd i32 %accum_load, i32 %accum_load_1" [mmm.cpp:97]   --->   Operation 71 'fadd' 'add1' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 14 <SV = 13> <Delay = 3.45>
+ST_14 : Operation 72 [2/8] (3.45ns)   --->   "%add1 = fadd i32 %accum_load, i32 %accum_load_1" [mmm.cpp:97]   --->   Operation 72 'fadd' 'add1' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 15 <SV = 14> <Delay = 3.45>
+ST_15 : Operation 73 [1/8] (3.45ns)   --->   "%add1 = fadd i32 %accum_load, i32 %accum_load_1" [mmm.cpp:97]   --->   Operation 73 'fadd' 'add1' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 16 <SV = 15> <Delay = 3.45>
+ST_16 : Operation 74 [8/8] (3.45ns)   --->   "%add2 = fadd i32 %add1, i32 0" [mmm.cpp:97]   --->   Operation 74 'fadd' 'add2' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 17 <SV = 16> <Delay = 3.45>
+ST_17 : Operation 75 [7/8] (3.45ns)   --->   "%add2 = fadd i32 %add1, i32 0" [mmm.cpp:97]   --->   Operation 75 'fadd' 'add2' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 18 <SV = 17> <Delay = 3.45>
+ST_18 : Operation 76 [6/8] (3.45ns)   --->   "%add2 = fadd i32 %add1, i32 0" [mmm.cpp:97]   --->   Operation 76 'fadd' 'add2' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 19 <SV = 18> <Delay = 3.45>
+ST_19 : Operation 77 [5/8] (3.45ns)   --->   "%add2 = fadd i32 %add1, i32 0" [mmm.cpp:97]   --->   Operation 77 'fadd' 'add2' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 20 <SV = 19> <Delay = 3.45>
+ST_20 : Operation 78 [4/8] (3.45ns)   --->   "%add2 = fadd i32 %add1, i32 0" [mmm.cpp:97]   --->   Operation 78 'fadd' 'add2' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 21 <SV = 20> <Delay = 3.45>
+ST_21 : Operation 79 [3/8] (3.45ns)   --->   "%add2 = fadd i32 %add1, i32 0" [mmm.cpp:97]   --->   Operation 79 'fadd' 'add2' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 22 <SV = 21> <Delay = 3.45>
+ST_22 : Operation 80 [2/8] (3.45ns)   --->   "%add2 = fadd i32 %add1, i32 0" [mmm.cpp:97]   --->   Operation 80 'fadd' 'add2' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 23 <SV = 22> <Delay = 3.45>
+ST_23 : Operation 81 [1/8] (3.45ns)   --->   "%add2 = fadd i32 %add1, i32 0" [mmm.cpp:97]   --->   Operation 81 'fadd' 'add2' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 24 <SV = 23> <Delay = 1.23>
+ST_24 : Operation 82 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @ai_aj_str"   --->   Operation 82 'specloopname' 'specloopname_ln0' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 83 [1/1] (0.00ns)   --->   "%empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 65536, i64 65536, i64 65536"   --->   Operation 83 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 84 [1/1] (0.00ns)   --->   "%zext_ln92_1 = zext i16 %add_ln92" [mmm.cpp:92]   --->   Operation 84 'zext' 'zext_ln92_1' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 85 [1/1] (0.00ns)   --->   "%C_addr = getelementptr i32 %C, i64 0, i64 %zext_ln92_1" [mmm.cpp:92]   --->   Operation 85 'getelementptr' 'C_addr' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 86 [1/1] (0.00ns)   --->   "%specloopname_ln90 = specloopname void @_ssdm_op_SpecLoopName, void @empty_3" [mmm.cpp:90]   --->   Operation 86 'specloopname' 'specloopname_ln90' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 87 [1/1] (0.00ns)   --->   "%bitcast_ln97 = bitcast i32 %add2" [mmm.cpp:97]   --->   Operation 87 'bitcast' 'bitcast_ln97' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 88 [1/1] (1.23ns)   --->   "%store_ln97 = store i32 %bitcast_ln97, i16 %C_addr" [mmm.cpp:97]   --->   Operation 88 'store' 'store_ln97' <Predicate = true> <Delay = 1.23> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 65536> <RAM>
+ST_24 : Operation 89 [1/1] (0.00ns)   --->   "%br_ln0 = br void"   --->   Operation 89 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 5ns, clock uncertainty: 1.35ns.
+
+ <State 1>: 0.427ns
+The critical path consists of the following:
+	'alloca' operation ('indvar_flatten') [6]  (0 ns)
+	'store' operation ('store_ln88', mmm.cpp:88) of constant 0 on local variable 'indvar_flatten' [13]  (0.427 ns)
+
+ <State 2>: 1.52ns
+The critical path consists of the following:
+	'load' operation ('indvar_flatten_load', mmm.cpp:88) on local variable 'indvar_flatten' [18]  (0 ns)
+	'add' operation ('add_ln88_1', mmm.cpp:88) [20]  (0.863 ns)
+	'store' operation ('store_ln88', mmm.cpp:88) of variable 'add_ln88_1', mmm.cpp:88 on local variable 'indvar_flatten' [48]  (0.427 ns)
+	blocking operation 0.232 ns on control path)
+
+ <State 3>: 0ns
+The critical path consists of the following:
+
+ <State 4>: 3.36ns
+The critical path consists of the following:
+	'load' operation ('j_load', mmm.cpp:89) on local variable 'j' [23]  (0 ns)
+	'icmp' operation ('icmp_ln89', mmm.cpp:89) [28]  (0.881 ns)
+	'select' operation ('select_ln88', mmm.cpp:88) [29]  (0.398 ns)
+	'call' operation ('call_ln88', mmm.cpp:88) to 'mmm_voodoo_Pipeline_ak' [40]  (2.08 ns)
+
+ <State 5>: 0ns
+The critical path consists of the following:
+
+ <State 6>: 0.677ns
+The critical path consists of the following:
+	'load' operation ('accum_load', mmm.cpp:97) on array 'accum', mmm.cpp:90 [41]  (0.677 ns)
+
+ <State 7>: 0.677ns
+The critical path consists of the following:
+	'load' operation ('accum_load', mmm.cpp:97) on array 'accum', mmm.cpp:90 [41]  (0.677 ns)
+
+ <State 8>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add1', mmm.cpp:97) [43]  (3.45 ns)
+
+ <State 9>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add1', mmm.cpp:97) [43]  (3.45 ns)
+
+ <State 10>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add1', mmm.cpp:97) [43]  (3.45 ns)
+
+ <State 11>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add1', mmm.cpp:97) [43]  (3.45 ns)
+
+ <State 12>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add1', mmm.cpp:97) [43]  (3.45 ns)
+
+ <State 13>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add1', mmm.cpp:97) [43]  (3.45 ns)
+
+ <State 14>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add1', mmm.cpp:97) [43]  (3.45 ns)
+
+ <State 15>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add1', mmm.cpp:97) [43]  (3.45 ns)
+
+ <State 16>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add2', mmm.cpp:97) [44]  (3.45 ns)
+
+ <State 17>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add2', mmm.cpp:97) [44]  (3.45 ns)
+
+ <State 18>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add2', mmm.cpp:97) [44]  (3.45 ns)
+
+ <State 19>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add2', mmm.cpp:97) [44]  (3.45 ns)
+
+ <State 20>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add2', mmm.cpp:97) [44]  (3.45 ns)
+
+ <State 21>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add2', mmm.cpp:97) [44]  (3.45 ns)
+
+ <State 22>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add2', mmm.cpp:97) [44]  (3.45 ns)
+
+ <State 23>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add2', mmm.cpp:97) [44]  (3.45 ns)
+
+ <State 24>: 1.24ns
+The critical path consists of the following:
+	'getelementptr' operation ('C_addr', mmm.cpp:92) [37]  (0 ns)
+	'store' operation ('store_ln97', mmm.cpp:97) of variable 'bitcast_ln97', mmm.cpp:97 on array 'C' [46]  (1.24 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

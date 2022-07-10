@@ -1,0 +1,676 @@
+
+
+================================================================
+== Vitis HLS Report for 'reduce_accum8_ii_is_1'
+================================================================
+* Date:           Sun Jul 10 12:43:27 2022
+
+* Version:        2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)
+* Project:        reduce_example
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xczu7ev-ffvc1156-2-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  5.00 ns|  3.454 ns|     1.35 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+------+------+---------+
+    |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline|
+    |   min   |   max   |    min    |    max    |  min |  max |   Type  |
+    +---------+---------+-----------+-----------+------+------+---------+
+    |     2129|     2129|  10.645 us|  10.645 us|  2129|  2129|       no|
+    +---------+---------+-----------+-----------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 62
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 28 
+28 --> 29 
+29 --> 30 
+30 --> 31 
+31 --> 32 
+32 --> 33 
+33 --> 34 
+34 --> 35 
+35 --> 36 
+36 --> 37 
+37 --> 38 
+38 --> 39 
+39 --> 40 
+40 --> 41 
+41 --> 42 
+42 --> 43 
+43 --> 44 
+44 --> 45 
+45 --> 46 
+46 --> 47 
+47 --> 48 
+48 --> 49 
+49 --> 50 
+50 --> 51 
+51 --> 52 
+52 --> 53 
+53 --> 54 
+54 --> 55 
+55 --> 56 
+56 --> 57 
+57 --> 58 
+58 --> 59 
+59 --> 60 
+60 --> 61 
+61 --> 62 
+62 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.00>
+ST_1 : Operation 63 [1/1] (0.00ns)   --->   "%accum = alloca i64 1" [reduce.cpp:53]   --->   Operation 63 'alloca' 'accum' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_1 : Operation 64 [2/2] (0.00ns)   --->   "%call_ln0 = call void @reduce_accum8_ii_is_1_Pipeline_1, i32 %accum"   --->   Operation 64 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 65 [1/2] (0.00ns)   --->   "%call_ln0 = call void @reduce_accum8_ii_is_1_Pipeline_1, i32 %accum"   --->   Operation 65 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 66 [2/2] (0.00ns)   --->   "%call_ln0 = call void @reduce_accum8_ii_is_1_Pipeline_accum8, i32 %A, i32 %accum"   --->   Operation 66 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 67 [1/2] (0.00ns)   --->   "%call_ln0 = call void @reduce_accum8_ii_is_1_Pipeline_accum8, i32 %A, i32 %accum"   --->   Operation 67 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 0.67>
+ST_5 : Operation 68 [1/1] (0.00ns)   --->   "%accum_addr = getelementptr i32 %accum, i64 0, i64 0" [reduce.cpp:57]   --->   Operation 68 'getelementptr' 'accum_addr' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 69 [2/2] (0.67ns)   --->   "%accum_load = load i3 %accum_addr" [reduce.cpp:57]   --->   Operation 69 'load' 'accum_load' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_5 : Operation 70 [1/1] (0.00ns)   --->   "%accum_addr_1 = getelementptr i32 %accum, i64 0, i64 1" [reduce.cpp:57]   --->   Operation 70 'getelementptr' 'accum_addr_1' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 71 [2/2] (0.67ns)   --->   "%accum_load_1 = load i3 %accum_addr_1" [reduce.cpp:57]   --->   Operation 71 'load' 'accum_load_1' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+
+State 6 <SV = 5> <Delay = 0.67>
+ST_6 : Operation 72 [1/2] (0.67ns)   --->   "%accum_load = load i3 %accum_addr" [reduce.cpp:57]   --->   Operation 72 'load' 'accum_load' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_6 : Operation 73 [1/2] (0.67ns)   --->   "%accum_load_1 = load i3 %accum_addr_1" [reduce.cpp:57]   --->   Operation 73 'load' 'accum_load_1' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+
+State 7 <SV = 6> <Delay = 3.45>
+ST_7 : Operation 74 [8/8] (3.45ns)   --->   "%add5 = fadd i32 %accum_load, i32 %accum_load_1" [reduce.cpp:57]   --->   Operation 74 'fadd' 'add5' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 8 <SV = 7> <Delay = 3.45>
+ST_8 : Operation 75 [7/8] (3.45ns)   --->   "%add5 = fadd i32 %accum_load, i32 %accum_load_1" [reduce.cpp:57]   --->   Operation 75 'fadd' 'add5' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 9 <SV = 8> <Delay = 3.45>
+ST_9 : Operation 76 [6/8] (3.45ns)   --->   "%add5 = fadd i32 %accum_load, i32 %accum_load_1" [reduce.cpp:57]   --->   Operation 76 'fadd' 'add5' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 10 <SV = 9> <Delay = 3.45>
+ST_10 : Operation 77 [5/8] (3.45ns)   --->   "%add5 = fadd i32 %accum_load, i32 %accum_load_1" [reduce.cpp:57]   --->   Operation 77 'fadd' 'add5' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 11 <SV = 10> <Delay = 3.45>
+ST_11 : Operation 78 [4/8] (3.45ns)   --->   "%add5 = fadd i32 %accum_load, i32 %accum_load_1" [reduce.cpp:57]   --->   Operation 78 'fadd' 'add5' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 12 <SV = 11> <Delay = 3.45>
+ST_12 : Operation 79 [3/8] (3.45ns)   --->   "%add5 = fadd i32 %accum_load, i32 %accum_load_1" [reduce.cpp:57]   --->   Operation 79 'fadd' 'add5' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 13 <SV = 12> <Delay = 3.45>
+ST_13 : Operation 80 [2/8] (3.45ns)   --->   "%add5 = fadd i32 %accum_load, i32 %accum_load_1" [reduce.cpp:57]   --->   Operation 80 'fadd' 'add5' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 81 [1/1] (0.00ns)   --->   "%accum_addr_2 = getelementptr i32 %accum, i64 0, i64 2" [reduce.cpp:57]   --->   Operation 81 'getelementptr' 'accum_addr_2' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 82 [2/2] (0.67ns)   --->   "%accum_load_2 = load i3 %accum_addr_2" [reduce.cpp:57]   --->   Operation 82 'load' 'accum_load_2' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+
+State 14 <SV = 13> <Delay = 3.45>
+ST_14 : Operation 83 [1/8] (3.45ns)   --->   "%add5 = fadd i32 %accum_load, i32 %accum_load_1" [reduce.cpp:57]   --->   Operation 83 'fadd' 'add5' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 84 [1/2] (0.67ns)   --->   "%accum_load_2 = load i3 %accum_addr_2" [reduce.cpp:57]   --->   Operation 84 'load' 'accum_load_2' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+
+State 15 <SV = 14> <Delay = 3.45>
+ST_15 : Operation 85 [8/8] (3.45ns)   --->   "%add7 = fadd i32 %add5, i32 %accum_load_2" [reduce.cpp:57]   --->   Operation 85 'fadd' 'add7' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 16 <SV = 15> <Delay = 3.45>
+ST_16 : Operation 86 [7/8] (3.45ns)   --->   "%add7 = fadd i32 %add5, i32 %accum_load_2" [reduce.cpp:57]   --->   Operation 86 'fadd' 'add7' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 17 <SV = 16> <Delay = 3.45>
+ST_17 : Operation 87 [6/8] (3.45ns)   --->   "%add7 = fadd i32 %add5, i32 %accum_load_2" [reduce.cpp:57]   --->   Operation 87 'fadd' 'add7' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 18 <SV = 17> <Delay = 3.45>
+ST_18 : Operation 88 [5/8] (3.45ns)   --->   "%add7 = fadd i32 %add5, i32 %accum_load_2" [reduce.cpp:57]   --->   Operation 88 'fadd' 'add7' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 19 <SV = 18> <Delay = 3.45>
+ST_19 : Operation 89 [4/8] (3.45ns)   --->   "%add7 = fadd i32 %add5, i32 %accum_load_2" [reduce.cpp:57]   --->   Operation 89 'fadd' 'add7' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 20 <SV = 19> <Delay = 3.45>
+ST_20 : Operation 90 [3/8] (3.45ns)   --->   "%add7 = fadd i32 %add5, i32 %accum_load_2" [reduce.cpp:57]   --->   Operation 90 'fadd' 'add7' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 21 <SV = 20> <Delay = 3.45>
+ST_21 : Operation 91 [2/8] (3.45ns)   --->   "%add7 = fadd i32 %add5, i32 %accum_load_2" [reduce.cpp:57]   --->   Operation 91 'fadd' 'add7' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 92 [1/1] (0.00ns)   --->   "%accum_addr_3 = getelementptr i32 %accum, i64 0, i64 3" [reduce.cpp:57]   --->   Operation 92 'getelementptr' 'accum_addr_3' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 93 [2/2] (0.67ns)   --->   "%accum_load_3 = load i3 %accum_addr_3" [reduce.cpp:57]   --->   Operation 93 'load' 'accum_load_3' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+
+State 22 <SV = 21> <Delay = 3.45>
+ST_22 : Operation 94 [1/8] (3.45ns)   --->   "%add7 = fadd i32 %add5, i32 %accum_load_2" [reduce.cpp:57]   --->   Operation 94 'fadd' 'add7' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 95 [1/2] (0.67ns)   --->   "%accum_load_3 = load i3 %accum_addr_3" [reduce.cpp:57]   --->   Operation 95 'load' 'accum_load_3' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+
+State 23 <SV = 22> <Delay = 3.45>
+ST_23 : Operation 96 [8/8] (3.45ns)   --->   "%add9 = fadd i32 %add7, i32 %accum_load_3" [reduce.cpp:57]   --->   Operation 96 'fadd' 'add9' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 24 <SV = 23> <Delay = 3.45>
+ST_24 : Operation 97 [7/8] (3.45ns)   --->   "%add9 = fadd i32 %add7, i32 %accum_load_3" [reduce.cpp:57]   --->   Operation 97 'fadd' 'add9' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 25 <SV = 24> <Delay = 3.45>
+ST_25 : Operation 98 [6/8] (3.45ns)   --->   "%add9 = fadd i32 %add7, i32 %accum_load_3" [reduce.cpp:57]   --->   Operation 98 'fadd' 'add9' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 26 <SV = 25> <Delay = 3.45>
+ST_26 : Operation 99 [5/8] (3.45ns)   --->   "%add9 = fadd i32 %add7, i32 %accum_load_3" [reduce.cpp:57]   --->   Operation 99 'fadd' 'add9' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 27 <SV = 26> <Delay = 3.45>
+ST_27 : Operation 100 [4/8] (3.45ns)   --->   "%add9 = fadd i32 %add7, i32 %accum_load_3" [reduce.cpp:57]   --->   Operation 100 'fadd' 'add9' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 28 <SV = 27> <Delay = 3.45>
+ST_28 : Operation 101 [3/8] (3.45ns)   --->   "%add9 = fadd i32 %add7, i32 %accum_load_3" [reduce.cpp:57]   --->   Operation 101 'fadd' 'add9' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 29 <SV = 28> <Delay = 3.45>
+ST_29 : Operation 102 [2/8] (3.45ns)   --->   "%add9 = fadd i32 %add7, i32 %accum_load_3" [reduce.cpp:57]   --->   Operation 102 'fadd' 'add9' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 103 [1/1] (0.00ns)   --->   "%accum_addr_4 = getelementptr i32 %accum, i64 0, i64 4" [reduce.cpp:57]   --->   Operation 103 'getelementptr' 'accum_addr_4' <Predicate = true> <Delay = 0.00>
+ST_29 : Operation 104 [2/2] (0.67ns)   --->   "%accum_load_4 = load i3 %accum_addr_4" [reduce.cpp:57]   --->   Operation 104 'load' 'accum_load_4' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+
+State 30 <SV = 29> <Delay = 3.45>
+ST_30 : Operation 105 [1/8] (3.45ns)   --->   "%add9 = fadd i32 %add7, i32 %accum_load_3" [reduce.cpp:57]   --->   Operation 105 'fadd' 'add9' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 106 [1/2] (0.67ns)   --->   "%accum_load_4 = load i3 %accum_addr_4" [reduce.cpp:57]   --->   Operation 106 'load' 'accum_load_4' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+
+State 31 <SV = 30> <Delay = 3.45>
+ST_31 : Operation 107 [8/8] (3.45ns)   --->   "%add1 = fadd i32 %add9, i32 %accum_load_4" [reduce.cpp:57]   --->   Operation 107 'fadd' 'add1' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 32 <SV = 31> <Delay = 3.45>
+ST_32 : Operation 108 [7/8] (3.45ns)   --->   "%add1 = fadd i32 %add9, i32 %accum_load_4" [reduce.cpp:57]   --->   Operation 108 'fadd' 'add1' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 33 <SV = 32> <Delay = 3.45>
+ST_33 : Operation 109 [6/8] (3.45ns)   --->   "%add1 = fadd i32 %add9, i32 %accum_load_4" [reduce.cpp:57]   --->   Operation 109 'fadd' 'add1' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 34 <SV = 33> <Delay = 3.45>
+ST_34 : Operation 110 [5/8] (3.45ns)   --->   "%add1 = fadd i32 %add9, i32 %accum_load_4" [reduce.cpp:57]   --->   Operation 110 'fadd' 'add1' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 35 <SV = 34> <Delay = 3.45>
+ST_35 : Operation 111 [4/8] (3.45ns)   --->   "%add1 = fadd i32 %add9, i32 %accum_load_4" [reduce.cpp:57]   --->   Operation 111 'fadd' 'add1' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 36 <SV = 35> <Delay = 3.45>
+ST_36 : Operation 112 [3/8] (3.45ns)   --->   "%add1 = fadd i32 %add9, i32 %accum_load_4" [reduce.cpp:57]   --->   Operation 112 'fadd' 'add1' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 37 <SV = 36> <Delay = 3.45>
+ST_37 : Operation 113 [2/8] (3.45ns)   --->   "%add1 = fadd i32 %add9, i32 %accum_load_4" [reduce.cpp:57]   --->   Operation 113 'fadd' 'add1' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 114 [1/1] (0.00ns)   --->   "%accum_addr_5 = getelementptr i32 %accum, i64 0, i64 5" [reduce.cpp:57]   --->   Operation 114 'getelementptr' 'accum_addr_5' <Predicate = true> <Delay = 0.00>
+ST_37 : Operation 115 [2/2] (0.67ns)   --->   "%accum_load_5 = load i3 %accum_addr_5" [reduce.cpp:57]   --->   Operation 115 'load' 'accum_load_5' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+
+State 38 <SV = 37> <Delay = 3.45>
+ST_38 : Operation 116 [1/8] (3.45ns)   --->   "%add1 = fadd i32 %add9, i32 %accum_load_4" [reduce.cpp:57]   --->   Operation 116 'fadd' 'add1' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_38 : Operation 117 [1/2] (0.67ns)   --->   "%accum_load_5 = load i3 %accum_addr_5" [reduce.cpp:57]   --->   Operation 117 'load' 'accum_load_5' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+
+State 39 <SV = 38> <Delay = 3.45>
+ST_39 : Operation 118 [8/8] (3.45ns)   --->   "%add2 = fadd i32 %add1, i32 %accum_load_5" [reduce.cpp:57]   --->   Operation 118 'fadd' 'add2' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 40 <SV = 39> <Delay = 3.45>
+ST_40 : Operation 119 [7/8] (3.45ns)   --->   "%add2 = fadd i32 %add1, i32 %accum_load_5" [reduce.cpp:57]   --->   Operation 119 'fadd' 'add2' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 41 <SV = 40> <Delay = 3.45>
+ST_41 : Operation 120 [6/8] (3.45ns)   --->   "%add2 = fadd i32 %add1, i32 %accum_load_5" [reduce.cpp:57]   --->   Operation 120 'fadd' 'add2' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 42 <SV = 41> <Delay = 3.45>
+ST_42 : Operation 121 [5/8] (3.45ns)   --->   "%add2 = fadd i32 %add1, i32 %accum_load_5" [reduce.cpp:57]   --->   Operation 121 'fadd' 'add2' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 43 <SV = 42> <Delay = 3.45>
+ST_43 : Operation 122 [4/8] (3.45ns)   --->   "%add2 = fadd i32 %add1, i32 %accum_load_5" [reduce.cpp:57]   --->   Operation 122 'fadd' 'add2' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 44 <SV = 43> <Delay = 3.45>
+ST_44 : Operation 123 [3/8] (3.45ns)   --->   "%add2 = fadd i32 %add1, i32 %accum_load_5" [reduce.cpp:57]   --->   Operation 123 'fadd' 'add2' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 45 <SV = 44> <Delay = 3.45>
+ST_45 : Operation 124 [2/8] (3.45ns)   --->   "%add2 = fadd i32 %add1, i32 %accum_load_5" [reduce.cpp:57]   --->   Operation 124 'fadd' 'add2' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_45 : Operation 125 [1/1] (0.00ns)   --->   "%accum_addr_6 = getelementptr i32 %accum, i64 0, i64 6" [reduce.cpp:57]   --->   Operation 125 'getelementptr' 'accum_addr_6' <Predicate = true> <Delay = 0.00>
+ST_45 : Operation 126 [2/2] (0.67ns)   --->   "%accum_load_6 = load i3 %accum_addr_6" [reduce.cpp:57]   --->   Operation 126 'load' 'accum_load_6' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+
+State 46 <SV = 45> <Delay = 3.45>
+ST_46 : Operation 127 [1/8] (3.45ns)   --->   "%add2 = fadd i32 %add1, i32 %accum_load_5" [reduce.cpp:57]   --->   Operation 127 'fadd' 'add2' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_46 : Operation 128 [1/2] (0.67ns)   --->   "%accum_load_6 = load i3 %accum_addr_6" [reduce.cpp:57]   --->   Operation 128 'load' 'accum_load_6' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+
+State 47 <SV = 46> <Delay = 3.45>
+ST_47 : Operation 129 [8/8] (3.45ns)   --->   "%add3 = fadd i32 %add2, i32 %accum_load_6" [reduce.cpp:57]   --->   Operation 129 'fadd' 'add3' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 48 <SV = 47> <Delay = 3.45>
+ST_48 : Operation 130 [7/8] (3.45ns)   --->   "%add3 = fadd i32 %add2, i32 %accum_load_6" [reduce.cpp:57]   --->   Operation 130 'fadd' 'add3' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 49 <SV = 48> <Delay = 3.45>
+ST_49 : Operation 131 [6/8] (3.45ns)   --->   "%add3 = fadd i32 %add2, i32 %accum_load_6" [reduce.cpp:57]   --->   Operation 131 'fadd' 'add3' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 50 <SV = 49> <Delay = 3.45>
+ST_50 : Operation 132 [5/8] (3.45ns)   --->   "%add3 = fadd i32 %add2, i32 %accum_load_6" [reduce.cpp:57]   --->   Operation 132 'fadd' 'add3' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 51 <SV = 50> <Delay = 3.45>
+ST_51 : Operation 133 [4/8] (3.45ns)   --->   "%add3 = fadd i32 %add2, i32 %accum_load_6" [reduce.cpp:57]   --->   Operation 133 'fadd' 'add3' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 52 <SV = 51> <Delay = 3.45>
+ST_52 : Operation 134 [3/8] (3.45ns)   --->   "%add3 = fadd i32 %add2, i32 %accum_load_6" [reduce.cpp:57]   --->   Operation 134 'fadd' 'add3' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 53 <SV = 52> <Delay = 3.45>
+ST_53 : Operation 135 [2/8] (3.45ns)   --->   "%add3 = fadd i32 %add2, i32 %accum_load_6" [reduce.cpp:57]   --->   Operation 135 'fadd' 'add3' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_53 : Operation 136 [1/1] (0.00ns)   --->   "%accum_addr_7 = getelementptr i32 %accum, i64 0, i64 7" [reduce.cpp:57]   --->   Operation 136 'getelementptr' 'accum_addr_7' <Predicate = true> <Delay = 0.00>
+ST_53 : Operation 137 [2/2] (0.67ns)   --->   "%accum_load_7 = load i3 %accum_addr_7" [reduce.cpp:57]   --->   Operation 137 'load' 'accum_load_7' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+
+State 54 <SV = 53> <Delay = 3.45>
+ST_54 : Operation 138 [1/8] (3.45ns)   --->   "%add3 = fadd i32 %add2, i32 %accum_load_6" [reduce.cpp:57]   --->   Operation 138 'fadd' 'add3' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_54 : Operation 139 [1/2] (0.67ns)   --->   "%accum_load_7 = load i3 %accum_addr_7" [reduce.cpp:57]   --->   Operation 139 'load' 'accum_load_7' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+
+State 55 <SV = 54> <Delay = 3.45>
+ST_55 : Operation 140 [8/8] (3.45ns)   --->   "%add4 = fadd i32 %add3, i32 %accum_load_7" [reduce.cpp:57]   --->   Operation 140 'fadd' 'add4' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 56 <SV = 55> <Delay = 3.45>
+ST_56 : Operation 141 [7/8] (3.45ns)   --->   "%add4 = fadd i32 %add3, i32 %accum_load_7" [reduce.cpp:57]   --->   Operation 141 'fadd' 'add4' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 57 <SV = 56> <Delay = 3.45>
+ST_57 : Operation 142 [6/8] (3.45ns)   --->   "%add4 = fadd i32 %add3, i32 %accum_load_7" [reduce.cpp:57]   --->   Operation 142 'fadd' 'add4' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 58 <SV = 57> <Delay = 3.45>
+ST_58 : Operation 143 [5/8] (3.45ns)   --->   "%add4 = fadd i32 %add3, i32 %accum_load_7" [reduce.cpp:57]   --->   Operation 143 'fadd' 'add4' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 59 <SV = 58> <Delay = 3.45>
+ST_59 : Operation 144 [4/8] (3.45ns)   --->   "%add4 = fadd i32 %add3, i32 %accum_load_7" [reduce.cpp:57]   --->   Operation 144 'fadd' 'add4' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 60 <SV = 59> <Delay = 3.45>
+ST_60 : Operation 145 [3/8] (3.45ns)   --->   "%add4 = fadd i32 %add3, i32 %accum_load_7" [reduce.cpp:57]   --->   Operation 145 'fadd' 'add4' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 61 <SV = 60> <Delay = 3.45>
+ST_61 : Operation 146 [2/8] (3.45ns)   --->   "%add4 = fadd i32 %add3, i32 %accum_load_7" [reduce.cpp:57]   --->   Operation 146 'fadd' 'add4' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 62 <SV = 61> <Delay = 3.45>
+ST_62 : Operation 147 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %A, void @empty, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 147 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_62 : Operation 148 [1/8] (3.45ns)   --->   "%add4 = fadd i32 %add3, i32 %accum_load_7" [reduce.cpp:57]   --->   Operation 148 'fadd' 'add4' <Predicate = true> <Delay = 3.45> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 7> <II = 1> <Delay = 3.45> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_62 : Operation 149 [1/1] (0.00ns)   --->   "%ret_ln57 = ret i32 %add4" [reduce.cpp:57]   --->   Operation 149 'ret' 'ret_ln57' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 5ns, clock uncertainty: 1.35ns.
+
+ <State 1>: 0ns
+The critical path consists of the following:
+
+ <State 2>: 0ns
+The critical path consists of the following:
+
+ <State 3>: 0ns
+The critical path consists of the following:
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+ <State 5>: 0.677ns
+The critical path consists of the following:
+	'getelementptr' operation ('accum_addr', reduce.cpp:57) [6]  (0 ns)
+	'load' operation ('accum_load', reduce.cpp:57) on array 'accum', reduce.cpp:53 [7]  (0.677 ns)
+
+ <State 6>: 0.677ns
+The critical path consists of the following:
+	'load' operation ('accum_load', reduce.cpp:57) on array 'accum', reduce.cpp:53 [7]  (0.677 ns)
+
+ <State 7>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add5', reduce.cpp:57) [10]  (3.45 ns)
+
+ <State 8>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add5', reduce.cpp:57) [10]  (3.45 ns)
+
+ <State 9>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add5', reduce.cpp:57) [10]  (3.45 ns)
+
+ <State 10>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add5', reduce.cpp:57) [10]  (3.45 ns)
+
+ <State 11>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add5', reduce.cpp:57) [10]  (3.45 ns)
+
+ <State 12>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add5', reduce.cpp:57) [10]  (3.45 ns)
+
+ <State 13>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add5', reduce.cpp:57) [10]  (3.45 ns)
+
+ <State 14>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add5', reduce.cpp:57) [10]  (3.45 ns)
+
+ <State 15>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add7', reduce.cpp:57) [13]  (3.45 ns)
+
+ <State 16>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add7', reduce.cpp:57) [13]  (3.45 ns)
+
+ <State 17>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add7', reduce.cpp:57) [13]  (3.45 ns)
+
+ <State 18>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add7', reduce.cpp:57) [13]  (3.45 ns)
+
+ <State 19>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add7', reduce.cpp:57) [13]  (3.45 ns)
+
+ <State 20>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add7', reduce.cpp:57) [13]  (3.45 ns)
+
+ <State 21>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add7', reduce.cpp:57) [13]  (3.45 ns)
+
+ <State 22>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add7', reduce.cpp:57) [13]  (3.45 ns)
+
+ <State 23>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add9', reduce.cpp:57) [16]  (3.45 ns)
+
+ <State 24>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add9', reduce.cpp:57) [16]  (3.45 ns)
+
+ <State 25>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add9', reduce.cpp:57) [16]  (3.45 ns)
+
+ <State 26>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add9', reduce.cpp:57) [16]  (3.45 ns)
+
+ <State 27>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add9', reduce.cpp:57) [16]  (3.45 ns)
+
+ <State 28>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add9', reduce.cpp:57) [16]  (3.45 ns)
+
+ <State 29>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add9', reduce.cpp:57) [16]  (3.45 ns)
+
+ <State 30>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add9', reduce.cpp:57) [16]  (3.45 ns)
+
+ <State 31>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add1', reduce.cpp:57) [19]  (3.45 ns)
+
+ <State 32>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add1', reduce.cpp:57) [19]  (3.45 ns)
+
+ <State 33>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add1', reduce.cpp:57) [19]  (3.45 ns)
+
+ <State 34>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add1', reduce.cpp:57) [19]  (3.45 ns)
+
+ <State 35>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add1', reduce.cpp:57) [19]  (3.45 ns)
+
+ <State 36>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add1', reduce.cpp:57) [19]  (3.45 ns)
+
+ <State 37>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add1', reduce.cpp:57) [19]  (3.45 ns)
+
+ <State 38>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add1', reduce.cpp:57) [19]  (3.45 ns)
+
+ <State 39>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add2', reduce.cpp:57) [22]  (3.45 ns)
+
+ <State 40>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add2', reduce.cpp:57) [22]  (3.45 ns)
+
+ <State 41>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add2', reduce.cpp:57) [22]  (3.45 ns)
+
+ <State 42>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add2', reduce.cpp:57) [22]  (3.45 ns)
+
+ <State 43>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add2', reduce.cpp:57) [22]  (3.45 ns)
+
+ <State 44>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add2', reduce.cpp:57) [22]  (3.45 ns)
+
+ <State 45>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add2', reduce.cpp:57) [22]  (3.45 ns)
+
+ <State 46>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add2', reduce.cpp:57) [22]  (3.45 ns)
+
+ <State 47>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add3', reduce.cpp:57) [25]  (3.45 ns)
+
+ <State 48>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add3', reduce.cpp:57) [25]  (3.45 ns)
+
+ <State 49>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add3', reduce.cpp:57) [25]  (3.45 ns)
+
+ <State 50>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add3', reduce.cpp:57) [25]  (3.45 ns)
+
+ <State 51>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add3', reduce.cpp:57) [25]  (3.45 ns)
+
+ <State 52>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add3', reduce.cpp:57) [25]  (3.45 ns)
+
+ <State 53>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add3', reduce.cpp:57) [25]  (3.45 ns)
+
+ <State 54>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add3', reduce.cpp:57) [25]  (3.45 ns)
+
+ <State 55>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add4', reduce.cpp:57) [28]  (3.45 ns)
+
+ <State 56>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add4', reduce.cpp:57) [28]  (3.45 ns)
+
+ <State 57>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add4', reduce.cpp:57) [28]  (3.45 ns)
+
+ <State 58>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add4', reduce.cpp:57) [28]  (3.45 ns)
+
+ <State 59>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add4', reduce.cpp:57) [28]  (3.45 ns)
+
+ <State 60>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add4', reduce.cpp:57) [28]  (3.45 ns)
+
+ <State 61>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add4', reduce.cpp:57) [28]  (3.45 ns)
+
+ <State 62>: 3.45ns
+The critical path consists of the following:
+	'fadd' operation ('add4', reduce.cpp:57) [28]  (3.45 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+	State 55
+	State 56
+	State 57
+	State 58
+	State 59
+	State 60
+	State 61
+	State 62
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

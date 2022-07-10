@@ -1,0 +1,166 @@
+
+
+================================================================
+== Vitis HLS Report for 'reduce_accum4_ii_is_3_Pipeline_1'
+================================================================
+* Date:           Sun Jul 10 12:43:26 2022
+
+* Version:        2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)
+* Project:        reduce_example
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xczu7ev-ffvc1156-2-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  5.00 ns|  1.100 ns|     1.35 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |        6|        6|  30.000 ns|  30.000 ns|    6|    6|       no|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |          |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |- Loop 1  |        4|        4|         1|          1|          1|     4|       yes|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 1
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 1
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 1, States = { 1 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.09>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%empty = alloca i32 1"   --->   Operation 4 'alloca' 'empty' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%accum_load33 = alloca i32 1"   --->   Operation 5 'alloca' 'accum_load33' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%accum_load_937 = alloca i32 1"   --->   Operation 6 'alloca' 'accum_load_937' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%accum_load_1041 = alloca i32 1"   --->   Operation 7 'alloca' 'accum_load_1041' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%accum_load_1145 = alloca i32 1"   --->   Operation 8 'alloca' 'accum_load_1145' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%accum_0_0 = alloca i32 1"   --->   Operation 9 'alloca' 'accum_0_0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%accum_1_0 = alloca i32 1"   --->   Operation 10 'alloca' 'accum_1_0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%accum_2_0 = alloca i32 1"   --->   Operation 11 'alloca' 'accum_2_0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%accum_3_0 = alloca i32 1"   --->   Operation 12 'alloca' 'accum_3_0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.42ns)   --->   "%store_ln0 = store i3 0, i3 %empty"   --->   Operation 13 'store' 'store_ln0' <Predicate = true> <Delay = 0.42>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%br_ln0 = br void %memset.loop"   --->   Operation 14 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%p_load = load i3 %empty"   --->   Operation 15 'load' 'p_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 16 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.58ns)   --->   "%exitcond24 = icmp_eq  i3 %p_load, i3 4"   --->   Operation 17 'icmp' 'exitcond24' <Predicate = true> <Delay = 0.58> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.58> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%empty_13 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 4, i64 4, i64 4"   --->   Operation 18 'speclooptripcount' 'empty_13' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.67ns)   --->   "%empty_14 = add i3 %p_load, i3 1"   --->   Operation 19 'add' 'empty_14' <Predicate = true> <Delay = 0.67> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.67> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%br_ln0 = br i1 %exitcond24, void %memset.loop.split, void %split.preheader.exitStub"   --->   Operation 20 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%empty_15 = trunc i3 %p_load"   --->   Operation 21 'trunc' 'empty_15' <Predicate = (!exitcond24)> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.72ns)   --->   "%switch_ln0 = switch i2 %empty_15, void %branch7, i2 0, void %memset.loop.split.memset.loop.split29_crit_edge, i2 1, void %memset.loop.split.memset.loop.split29_crit_edge1, i2 2, void %branch6"   --->   Operation 22 'switch' 'switch_ln0' <Predicate = (!exitcond24)> <Delay = 0.72>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%store_ln0 = store i32 0, i32 %accum_2_0"   --->   Operation 23 'store' 'store_ln0' <Predicate = (!exitcond24 & empty_15 == 2)> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%store_ln0 = store i32 0, i32 %accum_load_1041"   --->   Operation 24 'store' 'store_ln0' <Predicate = (!exitcond24 & empty_15 == 2)> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%br_ln0 = br void %memset.loop.split29"   --->   Operation 25 'br' 'br_ln0' <Predicate = (!exitcond24 & empty_15 == 2)> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%store_ln0 = store i32 0, i32 %accum_1_0"   --->   Operation 26 'store' 'store_ln0' <Predicate = (!exitcond24 & empty_15 == 1)> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%store_ln0 = store i32 0, i32 %accum_load_937"   --->   Operation 27 'store' 'store_ln0' <Predicate = (!exitcond24 & empty_15 == 1)> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%br_ln0 = br void %memset.loop.split29"   --->   Operation 28 'br' 'br_ln0' <Predicate = (!exitcond24 & empty_15 == 1)> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%store_ln0 = store i32 0, i32 %accum_0_0"   --->   Operation 29 'store' 'store_ln0' <Predicate = (!exitcond24 & empty_15 == 0)> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%store_ln0 = store i32 0, i32 %accum_load33"   --->   Operation 30 'store' 'store_ln0' <Predicate = (!exitcond24 & empty_15 == 0)> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%br_ln0 = br void %memset.loop.split29"   --->   Operation 31 'br' 'br_ln0' <Predicate = (!exitcond24 & empty_15 == 0)> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%store_ln0 = store i32 0, i32 %accum_3_0"   --->   Operation 32 'store' 'store_ln0' <Predicate = (!exitcond24 & empty_15 == 3)> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%store_ln0 = store i32 0, i32 %accum_load_1145"   --->   Operation 33 'store' 'store_ln0' <Predicate = (!exitcond24 & empty_15 == 3)> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%br_ln0 = br void %memset.loop.split29"   --->   Operation 34 'br' 'br_ln0' <Predicate = (!exitcond24 & empty_15 == 3)> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (0.42ns)   --->   "%store_ln0 = store i3 %empty_14, i3 %empty"   --->   Operation 35 'store' 'store_ln0' <Predicate = (!exitcond24)> <Delay = 0.42>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%br_ln0 = br void %memset.loop"   --->   Operation 36 'br' 'br_ln0' <Predicate = (!exitcond24)> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%accum_load = load i32 %accum_load33"   --->   Operation 37 'load' 'accum_load' <Predicate = (exitcond24)> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%accum_load_8 = load i32 %accum_load_937"   --->   Operation 38 'load' 'accum_load_8' <Predicate = (exitcond24)> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%accum_load_9 = load i32 %accum_load_1041"   --->   Operation 39 'load' 'accum_load_9' <Predicate = (exitcond24)> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%accum_load_10 = load i32 %accum_load_1145"   --->   Operation 40 'load' 'accum_load_10' <Predicate = (exitcond24)> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%accum_0_0_load = load i32 %accum_0_0"   --->   Operation 41 'load' 'accum_0_0_load' <Predicate = (exitcond24)> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%accum_1_0_load = load i32 %accum_1_0"   --->   Operation 42 'load' 'accum_1_0_load' <Predicate = (exitcond24)> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%accum_2_0_load = load i32 %accum_2_0"   --->   Operation 43 'load' 'accum_2_0_load' <Predicate = (exitcond24)> <Delay = 0.00>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%accum_3_0_load = load i32 %accum_3_0"   --->   Operation 44 'load' 'accum_3_0_load' <Predicate = (exitcond24)> <Delay = 0.00>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %accum_3_0_out, i32 %accum_3_0_load"   --->   Operation 45 'write' 'write_ln0' <Predicate = (exitcond24)> <Delay = 0.00>
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %accum_2_0_out, i32 %accum_2_0_load"   --->   Operation 46 'write' 'write_ln0' <Predicate = (exitcond24)> <Delay = 0.00>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %accum_1_0_out, i32 %accum_1_0_load"   --->   Operation 47 'write' 'write_ln0' <Predicate = (exitcond24)> <Delay = 0.00>
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %accum_0_0_out, i32 %accum_0_0_load"   --->   Operation 48 'write' 'write_ln0' <Predicate = (exitcond24)> <Delay = 0.00>
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %accum_load_1145_out, i32 %accum_load_10"   --->   Operation 49 'write' 'write_ln0' <Predicate = (exitcond24)> <Delay = 0.00>
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %accum_load_1041_out, i32 %accum_load_9"   --->   Operation 50 'write' 'write_ln0' <Predicate = (exitcond24)> <Delay = 0.00>
+ST_1 : Operation 51 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %accum_load_937_out, i32 %accum_load_8"   --->   Operation 51 'write' 'write_ln0' <Predicate = (exitcond24)> <Delay = 0.00>
+ST_1 : Operation 52 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %accum_load33_out, i32 %accum_load"   --->   Operation 52 'write' 'write_ln0' <Predicate = (exitcond24)> <Delay = 0.00>
+ST_1 : Operation 53 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 53 'ret' 'ret_ln0' <Predicate = (exitcond24)> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 5ns, clock uncertainty: 1.35ns.
+
+ <State 1>: 1.1ns
+The critical path consists of the following:
+	'alloca' operation ('empty') [9]  (0 ns)
+	'load' operation ('p_load') on local variable 'empty' [21]  (0 ns)
+	'add' operation ('empty_14') [25]  (0.673 ns)
+	'store' operation ('store_ln0') of variable 'empty_14' on local variable 'empty' [47]  (0.427 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

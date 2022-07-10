@@ -1,0 +1,6 @@
+<pragmas>
+<pragma file="reduce.cpp" line="20" pragmaType="inline" parentfunction="reduce_basic_ii_is_3" off="1" region="0" recursive="0"/>
+<pragma file="reduce.cpp" line="30" pragmaType="inline" parentfunction="reduce_accum2_ii_is_4" off="1" region="0" recursive="0"/>
+<pragma file="reduce.cpp" line="41" pragmaType="inline" parentfunction="reduce_accum4_ii_is_3" off="1" region="0" recursive="0"/>
+<pragma file="reduce.cpp" line="51" pragmaType="inline" parentfunction="reduce_accum8_ii_is_1" off="1" region="0" recursive="0"/>
+</pragmas>

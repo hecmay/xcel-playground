@@ -1,0 +1,12 @@
+<pragmas>
+<pragma file="mmm.cpp" line="26" pragmaType="inline" parentfunction="mmm_basic" off="1" region="0" recursive="0"/>
+<pragma file="mmm.cpp" line="34" pragmaType="unroll" parentfunction="mmm_basic" factor="2" skip_exit_check="0"/>
+<pragma file="mmm.cpp" line="43" pragmaType="inline" parentfunction="mmm_accum" off="1" region="0" recursive="0"/>
+<pragma file="mmm.cpp" line="53" pragmaType="unroll" parentfunction="mmm_accum" factor="2" skip_exit_check="0"/>
+<pragma file="mmm.cpp" line="63" pragmaType="inline" parentfunction="mmm_accum2" off="1" region="0" recursive="0"/>
+<pragma file="mmm.cpp" line="73" pragmaType="unroll" parentfunction="mmm_accum2" factor="2" skip_exit_check="0"/>
+<pragma file="mmm.cpp" line="83" pragmaType="inline" parentfunction="mmm_voodoo" off="1" region="0" recursive="0"/>
+<pragma file="mmm.cpp" line="93" pragmaType="unroll" parentfunction="mmm_voodoo" factor="2" skip_exit_check="0"/>
+<pragma file="mmm.cpp" line="104" pragmaType="array_reshape" parentfunction="top" dim="1" factor="2" mode="cyclic" variable="B"/>
+<pragma file="mmm.cpp" line="105" pragmaType="array_reshape" parentfunction="top" dim="2" factor="2" mode="cyclic" variable="A"/>
+</pragmas>

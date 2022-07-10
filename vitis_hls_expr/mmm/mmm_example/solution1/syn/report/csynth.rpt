@@ -1,0 +1,179 @@
+
+
+================================================================
+== Synthesis Summary Report of 'top'
+================================================================
++ General Information: 
+    * Date:           Sun Jul 10 13:00:28 2022
+    * Version:        2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)
+    * Project:        mmm_example
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynquplus
+    * Target device:  xczu7ev-ffvc1156-2-e
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +-----------------------------+------+------+-----------+-----------+----------+-----------+-------+----------+------+----------+------------+------------+-----+
+    |           Modules           | Issue|      |  Latency  |  Latency  | Iteration|           |  Trip |          |      |          |            |            |     |
+    |           & Loops           | Type | Slack|  (cycles) |    (ns)   |  Latency |  Interval | Count | Pipelined| BRAM |    DSP   |     FF     |     LUT    | URAM|
+    +-----------------------------+------+------+-----------+-----------+----------+-----------+-------+----------+------+----------+------------+------------+-----+
+    |+ top                        |     -|  0.20|  427425803|  2.137e+09|         -|  427425804|      -|        no|     -|  10 (~0%)|  3141 (~0%)|   3602 (1%)|    -|
+    | + mmm_basic                 |     -|  0.20|  135004161|  6.750e+08|         -|  135004161|      -|        no|     -|         -|   360 (~0%)|   441 (~0%)|    -|
+    |  o ai_aj                    |     -|  3.65|  135004160|  6.750e+08|      2060|          -|  65536|        no|     -|         -|           -|           -|    -|
+    |   + mmm_basic_Pipeline_ak   |     -|  0.20|       2057|  1.028e+04|         -|       2057|      -|        no|     -|         -|   285 (~0%)|   249 (~0%)|    -|
+    |    o ak                     |    II|  3.65|       2055|  1.028e+04|        24|         16|    128|       yes|     -|         -|           -|           -|    -|
+    | + mmm_accum2                |     -|  0.20|  144769025|  7.238e+08|         -|  144769025|      -|        no|     -|         -|   675 (~0%)|   821 (~0%)|    -|
+    |  o ai_aj                    |     -|  3.65|  144769024|  7.238e+08|      2209|          -|  65536|        no|     -|         -|           -|           -|    -|
+    |   + mmm_accum2_Pipeline_1   |     -|  2.67|          4|     20.000|         -|          4|      -|        no|     -|         -|    69 (~0%)|   128 (~0%)|    -|
+    |    o Loop 1                 |     -|  3.65|          2|     10.000|         1|          1|      2|       yes|     -|         -|           -|           -|    -|
+    |   + mmm_accum2_Pipeline_ak  |     -|  0.20|       2184|  1.092e+04|         -|       2184|      -|        no|     -|         -|   416 (~0%)|   371 (~0%)|    -|
+    |    o ak                     |    II|  3.65|       2182|  1.091e+04|        24|         17|    128|       yes|     -|         -|           -|           -|    -|
+    | + mmm_accum                 |     -|  0.20|  135528449|  6.776e+08|         -|  135528449|      -|        no|     -|         -|   400 (~0%)|   508 (~0%)|    -|
+    |  o ai_aj                    |     -|  3.65|  135528448|  6.776e+08|      2068|          -|  65536|        no|     -|         -|           -|           -|    -|
+    |   + mmm_accum_Pipeline_ak   |     -|  0.20|       2057|  1.028e+04|         -|       2057|      -|        no|     -|         -|   285 (~0%)|   249 (~0%)|    -|
+    |    o ak                     |    II|  3.65|       2055|  1.028e+04|        24|         16|    128|       yes|     -|         -|           -|           -|    -|
+    | + mmm_voodoo                |     -|  0.20|   12124161|  6.062e+07|         -|   12124161|      -|        no|     -|   5 (~0%)|  1247 (~0%)|  1035 (~0%)|    -|
+    |  o ai_aj                    |     -|  3.65|   12124160|  6.062e+07|       185|          -|  65536|        no|     -|         -|           -|           -|    -|
+    |   + mmm_voodoo_Pipeline_1   |     -|  2.25|         10|     50.000|         -|         10|      -|        no|     -|         -|     6 (~0%)|    48 (~0%)|    -|
+    |    o Loop 1                 |     -|  3.65|          8|     40.000|         1|          1|      8|       yes|     -|         -|           -|           -|    -|
+    |   + mmm_voodoo_Pipeline_ak  |     -|  0.20|        152|    760.000|         -|        152|      -|        no|     -|   5 (~0%)|   985 (~0%)|   556 (~0%)|    -|
+    |    o ak                     |     -|  3.65|        150|    750.000|        24|          1|    128|       yes|     -|         -|           -|           -|    -|
+    +-----------------------------+------+------+-----------+-----------+----------+-----------+-------+----------+------+----------+------------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* AP_MEMORY
++------------+----------+
+| Interface  | Bitwidth |
++------------+----------+
+| A_address0 | 15       |
+| A_q0       | 64       |
+| B_address0 | 15       |
+| B_q0       | 64       |
+| C_address0 | 16       |
+| C_d0       | 32       |
++------------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| C        | out       | float*   |
+| A        | in        | float*   |
+| B        | in        | float*   |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+--------------+---------+----------+
+| Argument | HW Interface | HW Type | HW Usage |
++----------+--------------+---------+----------+
+| C        | C_address0   | port    | offset   |
+| C        | C_ce0        | port    |          |
+| C        | C_we0        | port    |          |
+| C        | C_d0         | port    |          |
+| A        | A_address0   | port    | offset   |
+| A        | A_ce0        | port    |          |
+| A        | A_q0         | port    |          |
+| B        | B_address0   | port    | offset   |
+| B        | B_ce0        | port    |          |
+| B        | B_q0         | port    |          |
++----------+--------------+---------+----------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++----------------------------------------+-----+--------+------------+------+---------+---------+
+| Name                                   | DSP | Pragma | Variable   | Op   | Impl    | Latency |
++----------------------------------------+-----+--------+------------+------+---------+---------+
+| + top                                  | 10  |        |            |      |         |         |
+|  + mmm_basic                           | 0   |        |            |      |         |         |
+|    add_ln31_1_fu_115_p2                | -   |        | add_ln31_1 | add  | fabric  | 0       |
+|    add_ln31_fu_127_p2                  | -   |        | add_ln31   | add  | fabric  | 0       |
+|    add_ln33_fu_178_p2                  | -   |        | add_ln33   | add  | fabric  | 0       |
+|    add_ln32_fu_184_p2                  | -   |        | add_ln32   | add  | fabric  | 0       |
+|   + mmm_basic_Pipeline_ak              | 0   |        |            |      |         |         |
+|     add_ln36_fu_212_p2                 | -   |        | add_ln36   | add  | fabric  | 0       |
+|     add_ln34_fu_223_p2                 | -   |        | add_ln34   | add  | fabric  | 0       |
+|  + mmm_accum2                          | 0   |        |            |      |         |         |
+|    add_ln68_1_fu_160_p2                | -   |        | add_ln68_1 | add  | fabric  | 0       |
+|    add_ln68_fu_185_p2                  | -   |        | add_ln68   | add  | fabric  | 0       |
+|    add_ln72_fu_236_p2                  | -   |        | add_ln72   | add  | fabric  | 0       |
+|    add_ln69_fu_250_p2                  | -   |        | add_ln69   | add  | fabric  | 0       |
+|   + mmm_accum2_Pipeline_1              | 0   |        |            |      |         |         |
+|     empty_15_fu_96_p2                  | -   |        | empty_15   | add  | fabric  | 0       |
+|   + mmm_accum2_Pipeline_ak             | 0   |        |            |      |         |         |
+|     add_ln75_fu_246_p2                 | -   |        | add_ln75   | add  | fabric  | 0       |
+|     add_ln73_fu_265_p2                 | -   |        | add_ln73   | add  | fabric  | 0       |
+|  + mmm_accum                           | 0   |        |            |      |         |         |
+|    add_ln48_1_fu_122_p2                | -   |        | add_ln48_1 | add  | fabric  | 0       |
+|    add_ln48_fu_134_p2                  | -   |        | add_ln48   | add  | fabric  | 0       |
+|    add_ln52_fu_185_p2                  | -   |        | add_ln52   | add  | fabric  | 0       |
+|    add_ln49_fu_191_p2                  | -   |        | add_ln49   | add  | fabric  | 0       |
+|   + mmm_accum_Pipeline_ak              | 0   |        |            |      |         |         |
+|     add_ln55_fu_212_p2                 | -   |        | add_ln55   | add  | fabric  | 0       |
+|     add_ln53_fu_223_p2                 | -   |        | add_ln53   | add  | fabric  | 0       |
+|  + mmm_voodoo                          | 5   |        |            |      |         |         |
+|    add_ln88_1_fu_159_p2                | -   |        | add_ln88_1 | add  | fabric  | 0       |
+|    add_ln88_fu_176_p2                  | -   |        | add_ln88   | add  | fabric  | 0       |
+|    add_ln92_fu_227_p2                  | -   |        | add_ln92   | add  | fabric  | 0       |
+|    add_ln89_fu_233_p2                  | -   |        | add_ln89   | add  | fabric  | 0       |
+|   + mmm_voodoo_Pipeline_1              | 0   |        |            |      |         |         |
+|     empty_12_fu_58_p2                  | -   |        | empty_12   | add  | fabric  | 0       |
+|   + mmm_voodoo_Pipeline_ak             | 5   |        |            |      |         |         |
+|     add_ln95_fu_212_p2                 | -   |        | add_ln95   | add  | fabric  | 0       |
+|     fmul_32ns_32ns_32_5_max_dsp_1_U51  | 3   |        | mul_1      | fmul | maxdsp  | 4       |
+|     fadd_32ns_32ns_32_8_full_dsp_1_U49 | 2   |        | add_1      | fadd | fulldsp | 7       |
+|     add_ln93_fu_231_p2                 | -   |        | add_ln93   | add  | fabric  | 0       |
++----------------------------------------+-----+--------+------------+------+---------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
++---------------+------+------+--------+----------+---------+------+---------+
+| Name          | BRAM | URAM | Pragma | Variable | Storage | Impl | Latency |
++---------------+------+------+--------+----------+---------+------+---------+
+| + top         | 0    | 0    |        |          |         |      |         |
+|  + mmm_voodoo | 0    | 0    |        |          |         |      |         |
+|    accum_U    | -    | -    |        | accum    | ram_s2p | auto | 1       |
++---------------+------+------+--------+----------+---------+------+---------+
+
+
+================================================================
+== User Pragma Report
+================================================================
+* Valid Pragma Syntax
++---------------+--------------------------------------------+--------------------------+
+| Type          | Options                                    | Location                 |
++---------------+--------------------------------------------+--------------------------+
+| inline        | OFF                                        | mmm.cpp:27 in mmm_basic  |
+| unroll        | factor=UNROLL                              | mmm.cpp:35 in mmm_basic  |
+| inline        | OFF                                        | mmm.cpp:44 in mmm_accum  |
+| unroll        | factor=UNROLL                              | mmm.cpp:54 in mmm_accum  |
+| inline        | OFF                                        | mmm.cpp:64 in mmm_accum2 |
+| unroll        | factor=UNROLL                              | mmm.cpp:74 in mmm_accum2 |
+| inline        | OFF                                        | mmm.cpp:84 in mmm_voodoo |
+| unroll        | factor=UNROLL                              | mmm.cpp:94 in mmm_voodoo |
+| array_reshape | dim=1 type=cyclic factor=UNROLL variable=B | mmm.cpp:105 in top, B    |
+| array_reshape | dim=2 type=cyclic factor=UNROLL variable=A | mmm.cpp:106 in top, A    |
++---------------+--------------------------------------------+--------------------------+
+
+
