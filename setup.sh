@@ -7,7 +7,7 @@ function __xilinx_env_setup {
     export XILINX_VITIS_AIETOOLS=/opt/xilinx/Vitis/2022.1/aietools
     export XILINXD_LICENSE_FILE=2100@flex.ece.cornell.edu
 
-    export PATH=$XILINX_XRT/bin:$XILINX_VIVADO/bin:$XILINX_VITIS/bin:$XILINX_VITIS/gnu/microblaze/lin/bin:$XILINX_VITIS/gnu/arm/lin/bin:$XILINX_VITIS/gnu/microblaze/linux_toolchain/lin64:$XILINX_VITIS/gnu/aarch32/lin/gcc-arm-linux-gnueabi/bin:$XILINX_VITIS/gnu/aarch32/lin/gcc-arm-none-eabi/bin:$XILINX_VITIS/gnu/aarch64/lin/aarch64-linux/bin:$XILINX_VITIS/gnu/aarch64/lin/aarch64-none/bin:$XILINX_VITIS/gnu/armr5/lin/gcc-arm-none-eabi/bin:$XILINX_VITIS/aietools/bin/:$PATH
+    export PATH=$XILINX_VITIS_HLS/bin:$XILINX_XRT/bin:$XILINX_VIVADO/bin:$XILINX_VITIS/bin:$XILINX_VITIS/gnu/microblaze/lin/bin:$XILINX_VITIS/gnu/arm/lin/bin:$XILINX_VITIS/gnu/microblaze/linux_toolchain/lin64:$XILINX_VITIS/gnu/aarch32/lin/gcc-arm-linux-gnueabi/bin:$XILINX_VITIS/gnu/aarch32/lin/gcc-arm-none-eabi/bin:$XILINX_VITIS/gnu/aarch64/lin/aarch64-linux/bin:$XILINX_VITIS/gnu/aarch64/lin/aarch64-none/bin:$XILINX_VITIS/gnu/armr5/lin/gcc-arm-none-eabi/bin:$XILINX_VITIS/aietools/bin/:$PATH
 
     export LD_LIBRARY_PATH=$HOME/install/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH
     export CPLUS_INCLUDE_PATH=$HOME/install/usr/include/

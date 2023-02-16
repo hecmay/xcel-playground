@@ -1,7 +1,9 @@
 llvm-project
 
 *.log
+*.o
 .ipcache
 
 _x.hw.xilinx*
 build_dir.*
+.Xil
